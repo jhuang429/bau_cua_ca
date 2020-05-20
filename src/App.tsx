@@ -55,7 +55,9 @@ function App() {
         <img onClick={() => addbet(2)} src="/images/2.png" />
         <img onClick={() => addbet(3)} src="/images/3.png" />
         <img onClick={() => addbet(4)} src="/images/4.png" />
-        <img onClick={() => addbet(5)} src="/images/5.png" />
+        <img onClick={() => {
+          return addbet(5);
+        }} src="/images/5.png" />
         <img onClick={() => addbet(6)} src="/images/6.png" />
       </div>
       <div className="console">
