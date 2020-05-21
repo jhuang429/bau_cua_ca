@@ -3,7 +3,7 @@ import "./App.css";
 import Dice from "./Components/dice";
 
 function App() {
-  let [currRoll, setCurrRoll] = useState<number[]>([1, 1, 1]);
+  let [currRoll, setCurrRoll] = useState<[number,number,number]>([1, 1, 1]);
   let [history, setHistory] = useState<number[][]>([]);
   let [bet, setBet] = useState<any>({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 });
   let [money, setMoney] = useState<number>(100);
