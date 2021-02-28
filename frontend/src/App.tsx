@@ -9,14 +9,15 @@ function App() {
   let [money, setMoney] = useState<number>(100);
   let [message, setMessage] = useState("")
 
-  function rollDice() {
-    let dice1 = Math.floor(Math.random() * 6 + 1);
-    let dice2 = Math.floor(Math.random() * 6 + 1);
-    let dice3 = Math.floor(Math.random() * 6 + 1);
-    setCurrRoll([dice1, dice2, dice3]);
-    setHistory([[dice1, dice2, dice3], ...history]);
-
-    calcWinnings([dice1, dice2, dice3]);
+function rollDice() {
+  fetch('http://localhost:3001/play')
+    .then(response => response.json())
+    .then(data => {
+      console.log([data]);
+      setCurrRoll(data);
+      setHistory([data, ...history]);
+      calcWinnings(data);
+    })
   }
 
   function addbet(num: number) {
